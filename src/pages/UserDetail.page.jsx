@@ -12,6 +12,7 @@ export default function UserDetail() {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   const handleNavigate = () => {
     navigate(-1);
@@ -26,8 +27,9 @@ export default function UserDetail() {
 
         setData(newData);
         setLoading(true);
+        setError(false);
       })
-      .catch((error) => console.log(error, "error"));
+      .catch((error) => setError(true));
   }, []);
 
   return (
@@ -56,13 +58,17 @@ export default function UserDetail() {
           <Text>Back</Text>
         </Box>
 
-        <UserCard
-          loading={loading}
-          email={data.email}
-          first_name={data.first_name}
-          last_name={data.last_name}
-          avatar={data.avatar}
-        />
+        {error ? (
+          navigate("/users")
+        ) : (
+          <UserCard
+            loading={loading}
+            email={data.email}
+            first_name={data.first_name}
+            last_name={data.last_name}
+            avatar={data.avatar}
+          />
+        )}
       </Box>
     </Box>
   );
