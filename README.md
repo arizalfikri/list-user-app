@@ -6,6 +6,7 @@ kemudian ketika diklik card salah satu user, akan dialihkan ke halaman detail us
 
 ### Cara menjalankan
 ```js
+npm install
 npm run dev
 ```
 
