@@ -17,3 +17,4 @@ npm run dev
 - React Router
 - Axios
 - chakraUI
+- ReqRes API
