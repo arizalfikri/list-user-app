@@ -13,11 +13,11 @@ export default function NotFound() {
           404
         </Text>
         <Text>
-          Page not found go
+          Page&nbsp;not&nbsp;found&nbsp;go&nbsp;
           <span className="back" onClick={handleNavigate}>
             Back
           </span>
-          at home
+          &nbsp;at&nbsp;home
         </Text>
       </Box>
     </Flex>
